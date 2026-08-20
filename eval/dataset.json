@@ -1,0 +1,202 @@
+[
+  {
+    "id": "q01", "category": "straightforward", "difficulty": "easy", "role": "finance", "type": "single",
+    "query": "How many business days after approval is an expense report reimbursed?",
+    "expected_doc_ids": ["expense-policy"],
+    "expected_answer_keywords": ["7 business days", "direct deposit"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q02", "category": "straightforward", "difficulty": "easy", "role": "hr", "type": "single",
+    "query": "How many paid sick days do employees get per calendar year?",
+    "expected_doc_ids": ["leave-policy"],
+    "expected_answer_keywords": ["10 days"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q03", "category": "straightforward", "difficulty": "medium", "role": "hr", "type": "single",
+    "query": "What is the Company's 401(k) matching formula?",
+    "expected_doc_ids": ["benefits-guide"],
+    "expected_answer_keywords": ["100%", "4%", "50%", "5%"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q04", "category": "straightforward", "difficulty": "easy", "role": "it", "type": "single",
+    "query": "What is the minimum required password length?",
+    "expected_doc_ids": ["password-policy"],
+    "expected_answer_keywords": ["12 characters"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q05", "category": "straightforward", "difficulty": "medium", "role": "it", "type": "single",
+    "query": "What should I do if I approved an Okta MFA push notification I did not initiate?",
+    "expected_doc_ids": ["password-policy"],
+    "expected_answer_keywords": ["change your password", "it service desk"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q06", "category": "straightforward", "difficulty": "medium", "role": "legal", "type": "single",
+    "query": "How long do confidentiality obligations survive after the mutual NDA's term ends?",
+    "expected_doc_ids": ["nda-template"],
+    "expected_answer_keywords": ["3 years", "trade secret"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q07", "category": "straightforward", "difficulty": "easy", "role": "sales", "type": "single",
+    "query": "What is the minimum seat count required for the OrbitSuite Enterprise tier?",
+    "expected_doc_ids": ["orbitsuite-pricing-2026"],
+    "expected_answer_keywords": ["25"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q08", "category": "straightforward", "difficulty": "medium", "role": "finance", "type": "single",
+    "query": "How many days in advance should international business travel be booked?",
+    "expected_doc_ids": ["travel-policy"],
+    "expected_answer_keywords": ["21 days"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+
+  {
+    "id": "q09", "category": "multi_document", "difficulty": "medium", "role": "finance", "type": "single",
+    "query": "What is the itemized receipt requirement threshold, and does it apply the same way for travel expenses as for regular expenses?",
+    "expected_doc_ids": ["expense-policy", "travel-policy"],
+    "expected_answer_keywords": ["$25"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q10", "category": "multi_document", "difficulty": "hard", "role": "sales", "type": "single",
+    "query": "Compare the OrbitSuite Professional and Enterprise tiers on price and API access.",
+    "expected_doc_ids": ["orbitsuite-pricing-2026"],
+    "expected_answer_keywords": ["65", "109", "100k", "unlimited"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q11", "category": "multi_document", "difficulty": "hard", "role": "sales", "type": "single",
+    "query": "For a 150-seat annual prepaid deal, how do the volume discount and the term discount combine?",
+    "expected_doc_ids": ["discount-schedule"],
+    "expected_answer_keywords": ["15%", "30%", "45.5"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q12", "category": "multi_document", "difficulty": "medium", "role": "hr", "type": "single",
+    "query": "What's the difference between short-term and long-term disability coverage?",
+    "expected_doc_ids": ["benefits-guide"],
+    "expected_answer_keywords": ["60%", "12 weeks", "90-day"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+
+  {
+    "id": "q13", "category": "conflicting_versions", "difficulty": "hard", "role": "sales", "type": "single",
+    "query": "What is the current price per seat for the OrbitSuite Enterprise tier?",
+    "expected_doc_ids": ["orbitsuite-pricing-2026"],
+    "expected_answer_keywords": ["109"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q14", "category": "conflicting_versions", "difficulty": "hard", "role": "sales", "type": "single",
+    "query": "What was the OrbitSuite Enterprise tier's price per seat in the 2025 rate card?",
+    "expected_doc_ids": ["orbitsuite-pricing-2025"],
+    "expected_answer_keywords": ["99"],
+    "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+  },
+
+  {
+    "id": "q15", "category": "ambiguous", "difficulty": "hard", "role": "finance", "type": "single",
+    "query": "What is the limit?",
+    "expected_doc_ids": [],
+    "expected_answer_keywords": [],
+    "expect_insufficient_evidence": false, "expect_ambiguous": true, "forbidden_departments": []
+  },
+  {
+    "id": "q16", "category": "ambiguous", "difficulty": "hard", "role": "sales", "type": "single",
+    "query": "What is the price?",
+    "expected_doc_ids": [],
+    "expected_answer_keywords": [],
+    "expect_insufficient_evidence": false, "expect_ambiguous": true, "forbidden_departments": []
+  },
+
+  {
+    "id": "q17", "category": "no_answer", "difficulty": "medium", "role": "hr", "type": "single",
+    "query": "Does Northwind Traders provide relocation assistance for employees moving to a new city?",
+    "expected_doc_ids": [],
+    "expected_answer_keywords": [],
+    "expect_insufficient_evidence": true, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q18", "category": "no_answer", "difficulty": "medium", "role": "it", "type": "single",
+    "query": "What is the process for requesting a new company laptop?",
+    "expected_doc_ids": [],
+    "expected_answer_keywords": [],
+    "expect_insufficient_evidence": true, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q19", "category": "no_answer", "difficulty": "medium", "role": "legal", "type": "single",
+    "query": "What is Northwind Traders' policy on reimbursing employees for patent filing costs on their inventions?",
+    "expected_doc_ids": [],
+    "expected_answer_keywords": [],
+    "expect_insufficient_evidence": true, "expect_ambiguous": false, "forbidden_departments": []
+  },
+  {
+    "id": "q20", "category": "no_answer", "difficulty": "medium", "role": "sales", "type": "single",
+    "query": "Does Northwind Traders offer a lifetime price-lock guarantee on OrbitSuite contracts?",
+    "expected_doc_ids": [],
+    "expected_answer_keywords": [],
+    "expect_insufficient_evidence": true, "expect_ambiguous": false, "forbidden_departments": []
+  },
+
+  {
+    "id": "q21", "category": "access_control", "difficulty": "hard", "role": "engineering", "type": "single",
+    "query": "What is the sick leave policy?",
+    "expected_doc_ids": [],
+    "expected_answer_keywords": [],
+    "expect_insufficient_evidence": true, "expect_ambiguous": false, "forbidden_departments": ["HR"]
+  },
+  {
+    "id": "q22", "category": "access_control", "difficulty": "hard", "role": "it", "type": "single",
+    "query": "What is the sick leave policy?",
+    "expected_doc_ids": [],
+    "expected_answer_keywords": [],
+    "expect_insufficient_evidence": true, "expect_ambiguous": false, "forbidden_departments": ["HR"]
+  },
+
+  {
+    "id": "conv01", "category": "follow_up", "difficulty": "hard", "role": "finance", "type": "conversation",
+    "turns": [
+      {
+        "query": "What is the client meal expense limit?",
+        "expected_doc_ids": ["expense-policy"],
+        "expected_answer_keywords": ["100"],
+        "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+      },
+      {
+        "query": "What about team meals?",
+        "expected_doc_ids": ["expense-policy"],
+        "expected_answer_keywords": ["75"],
+        "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+      },
+      {
+        "query": "Who has to approve it if it's above that?",
+        "expected_doc_ids": ["expense-policy"],
+        "expected_answer_keywords": ["manager"],
+        "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+      }
+    ]
+  },
+  {
+    "id": "conv02", "category": "follow_up", "difficulty": "medium", "role": "sales", "type": "conversation",
+    "turns": [
+      {
+        "query": "What is the OrbitSuite Professional tier's API call limit?",
+        "expected_doc_ids": ["orbitsuite-pricing-2026"],
+        "expected_answer_keywords": ["100k"],
+        "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+      },
+      {
+        "query": "And Enterprise?",
+        "expected_doc_ids": ["orbitsuite-pricing-2026"],
+        "expected_answer_keywords": ["unlimited"],
+        "expect_insufficient_evidence": false, "expect_ambiguous": false, "forbidden_departments": []
+      }
+    ]
+  }
+]

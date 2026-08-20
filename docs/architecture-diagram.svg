@@ -1,0 +1,166 @@
+<svg viewBox="0 0 1320 570" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title>Northwind Traders production RAG architecture on Azure</title>
+  <desc>Ingestion runs offline into shared Azure OpenAI and Azure AI Search services. Queries run online through an authenticated orchestrator that enforces department access control as a server-side search filter driven by the caller's Entra ID groups, not a post-hoc check on the generated answer.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrowDashed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1320" height="570" fill="#ffffff"/>
+
+  <text x="660" y="28" text-anchor="middle" font-size="21" font-weight="700" fill="#0f172a">Northwind Traders — Production RAG Architecture on Azure</text>
+  <text x="660" y="47" text-anchor="middle" font-size="12.5" fill="#475569">Ingestion (offline, event-driven)  ·  Shared platform services  ·  Query (online, per request)</text>
+
+  <!-- ================= LANE 1: INGESTION ================= -->
+  <text x="20" y="74" font-size="13.5" font-weight="700" fill="#0f172a">1 · Ingestion pipeline (offline, event-driven)</text>
+
+  <!-- A1 -->
+  <rect x="20" y="84" width="180" height="62" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.3"/>
+  <text x="110" y="109" text-anchor="middle" font-size="11.5" fill="#0f172a">Document sources</text>
+  <text x="110" y="124" text-anchor="middle" font-size="11.5" fill="#0f172a">(SharePoint / upload)</text>
+
+  <!-- A2 -->
+  <rect x="215" y="84" width="150" height="62" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.3"/>
+  <text x="290" y="109" text-anchor="middle" font-size="11.5" fill="#0f172a">Blob Storage</text>
+  <text x="290" y="124" text-anchor="middle" font-size="11.5" fill="#0f172a">(raw container)</text>
+
+  <!-- A3 -->
+  <rect x="380" y="84" width="150" height="62" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.3"/>
+  <text x="455" y="109" text-anchor="middle" font-size="11.5" fill="#0f172a">Event Grid</text>
+  <text x="455" y="124" text-anchor="middle" font-size="11.5" fill="#0f172a">(blob-created)</text>
+
+  <!-- A4 -->
+  <rect x="545" y="84" width="230" height="62" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.3"/>
+  <text x="660" y="109" text-anchor="middle" font-size="11.5" fill="#0f172a" font-weight="600">Azure Function</text>
+  <text x="660" y="124" text-anchor="middle" font-size="11.5" fill="#0f172a">parse → chunk → embed</text>
+
+  <!-- KV -->
+  <rect x="850" y="84" width="220" height="62" rx="8" fill="#fef9c3" stroke="#a16207" stroke-width="1.3"/>
+  <text x="960" y="109" text-anchor="middle" font-size="11.5" fill="#713f12" font-weight="600">Key Vault</text>
+  <text x="960" y="124" text-anchor="middle" font-size="11.5" fill="#713f12">secrets · managed identity</text>
+
+  <line x1="200" y1="115" x2="213" y2="115" stroke="#334155" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="207" y="105" text-anchor="middle" font-size="9.5" fill="#475569">upload</text>
+
+  <line x1="365" y1="115" x2="378" y2="115" stroke="#334155" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="371" y="105" text-anchor="middle" font-size="9.5" fill="#475569">event</text>
+
+  <line x1="530" y1="115" x2="543" y2="115" stroke="#334155" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="536" y="105" text-anchor="middle" font-size="9.5" fill="#475569">trigger</text>
+
+  <line x1="848" y1="115" x2="777" y2="115" stroke="#a16207" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrowDashed)"/>
+  <text x="812" y="105" text-anchor="middle" font-size="9.5" fill="#a16207">secrets</text>
+
+  <!-- ================= LANE 2: SHARED SERVICES ================= -->
+  <text x="20" y="174" font-size="13.5" font-weight="700" fill="#0f172a">2 · Shared Azure platform services</text>
+
+  <!-- S1 -->
+  <rect x="100" y="184" width="320" height="74" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="260" y="207" text-anchor="middle" font-size="11.5" fill="#1e3a8a" font-weight="600">Azure OpenAI</text>
+  <text x="260" y="223" text-anchor="middle" font-size="11" fill="#1e3a8a">chat: gpt-4o-mini</text>
+  <text x="260" y="238" text-anchor="middle" font-size="11" fill="#1e3a8a">embeddings: text-embedding-3-large</text>
+
+  <!-- S2 -->
+  <rect x="460" y="184" width="320" height="74" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="1.3"/>
+  <text x="620" y="207" text-anchor="middle" font-size="11.5" fill="#14532d" font-weight="600">Azure AI Search</text>
+  <text x="620" y="223" text-anchor="middle" font-size="11" fill="#14532d">hybrid (BM25 + vector) + semantic ranker</text>
+  <text x="620" y="238" text-anchor="middle" font-size="11" fill="#14532d">department-filterable index</text>
+
+  <!-- AI Insights -->
+  <rect x="830" y="184" width="260" height="74" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.3"/>
+  <text x="960" y="215" text-anchor="middle" font-size="11.5" fill="#0f172a" font-weight="600">Application Insights /</text>
+  <text x="960" y="231" text-anchor="middle" font-size="11.5" fill="#0f172a">Log Analytics</text>
+
+  <line x1="660" y1="146" x2="290" y2="182" stroke="#334155" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="460" y="170" text-anchor="middle" font-size="9.5" fill="#475569">embed chunks</text>
+
+  <line x1="660" y1="146" x2="630" y2="182" stroke="#334155" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="690" y="170" text-anchor="middle" font-size="9.5" fill="#475569">upsert index + metadata</text>
+
+  <line x1="775" y1="140" x2="900" y2="184" stroke="#94a3b8" stroke-width="1.1" stroke-dasharray="5,4" marker-end="url(#arrowDashed)"/>
+  <text x="862" y="168" text-anchor="middle" font-size="9" fill="#64748b">traces</text>
+
+  <line x1="960" y1="146" x2="660" y2="340" stroke="#a16207" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrowDashed)"/>
+  <text x="845" y="248" text-anchor="middle" font-size="9.5" fill="#a16207">secrets (managed identity)</text>
+
+  <!-- ACL callout -->
+  <rect x="460" y="266" width="460" height="46" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1.1" stroke-dasharray="3,3"/>
+  <text x="480" y="285" font-size="10.5" fill="#78350f">Security trimming: search filter = department in</text>
+  <text x="480" y="300" font-size="10.5" fill="#78350f">{caller's Entra ID groups} — enforced server-side, every query.</text>
+
+  <!-- ================= LANE 3: QUERY ================= -->
+  <text x="20" y="332" font-size="13.5" font-weight="700" fill="#0f172a">3 · Query pipeline (online, per request)</text>
+
+  <!-- Q1 -->
+  <rect x="20" y="342" width="160" height="66" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.3"/>
+  <text x="100" y="368" text-anchor="middle" font-size="11.5" fill="#0f172a">User</text>
+  <text x="100" y="383" text-anchor="middle" font-size="11.5" fill="#0f172a">(web app / Teams)</text>
+
+  <!-- Q2 -->
+  <rect x="210" y="342" width="260" height="66" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.3"/>
+  <text x="340" y="365" text-anchor="middle" font-size="11.5" fill="#0f172a" font-weight="600">Front Door + API Management</text>
+  <text x="340" y="381" text-anchor="middle" font-size="11" fill="#0f172a">AuthN (Entra ID) · rate limiting</text>
+
+  <!-- Q3 -->
+  <rect x="490" y="342" width="340" height="78" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.3"/>
+  <text x="660" y="360" text-anchor="middle" font-size="11.5" fill="#0f172a" font-weight="600">RAG Orchestrator (App Service / Container Apps)</text>
+  <text x="660" y="378" text-anchor="middle" font-size="10.3" fill="#0f172a">rewrite → hybrid retrieve → rerank</text>
+  <text x="660" y="393" text-anchor="middle" font-size="10.3" fill="#0f172a">confidence gate → generate → guardrail</text>
+
+  <!-- Cosmos -->
+  <rect x="860" y="342" width="220" height="78" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.3"/>
+  <text x="970" y="374" text-anchor="middle" font-size="11.5" fill="#0f172a">Cosmos DB</text>
+  <text x="970" y="389" text-anchor="middle" font-size="11.5" fill="#0f172a">conversation state</text>
+
+  <line x1="182" y1="375" x2="208" y2="375" stroke="#334155" stroke-width="1.4" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="195" y="365" text-anchor="middle" font-size="8.7" fill="#475569"> </text>
+
+  <line x1="472" y1="375" x2="488" y2="375" stroke="#334155" stroke-width="1.4" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <line x1="832" y1="380" x2="858" y2="380" stroke="#334155" stroke-width="1.4" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="845" y="370" text-anchor="middle" font-size="8.7" fill="#475569">turns</text>
+
+  <text x="195" y="330" text-anchor="middle" font-size="9" fill="#475569">HTTPS request /</text>
+  <text x="195" y="322" text-anchor="middle" font-size="9" fill="#475569">answer + citations</text>
+
+  <text x="485" y="330" text-anchor="middle" font-size="9" fill="#475569">auth'd request + group claims /</text>
+  <text x="485" y="322" text-anchor="middle" font-size="9" fill="#475569">grounded answer</text>
+
+  <!-- vertical double arrows Q3<->S2, Q3<->S1 -->
+  <line x1="620" y1="340" x2="620" y2="260" stroke="#15803d" stroke-width="1.4" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="628" y="330" font-size="9.5" fill="#14532d">hybrid search + dept filter ↑</text>
+  <text x="628" y="343" font-size="9.5" fill="#14532d">↓ top-k chunks</text>
+
+  <polyline points="560,342 560,322 260,322 260,260" fill="none" stroke="#1d4ed8" stroke-width="1.4" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="330" y="313" text-anchor="middle" font-size="9.5" fill="#1e3a8a">chat completion /</text>
+  <text x="330" y="335" text-anchor="middle" font-size="9.5" fill="#1e3a8a">grounded answer</text>
+
+  <line x1="828" y1="358" x2="892" y2="260" stroke="#94a3b8" stroke-width="1.1" stroke-dasharray="5,4" marker-end="url(#arrowDashed)"/>
+  <text x="900" y="315" text-anchor="middle" font-size="9" fill="#64748b">logs / metrics</text>
+
+  <!-- ================= LANE 4: IDENTITY ================= -->
+  <rect x="210" y="432" width="260" height="54" rx="8" fill="#ede9fe" stroke="#6d28d9" stroke-width="1.3"/>
+  <text x="340" y="455" text-anchor="middle" font-size="11.5" fill="#4c1d95" font-weight="600">Microsoft Entra ID</text>
+  <text x="340" y="471" text-anchor="middle" font-size="10.5" fill="#4c1d95">users + security groups (HR/Finance/IT/Legal/Sales)</text>
+
+  <line x1="340" y1="430" x2="340" y2="420" stroke="#6d28d9" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="470" y="426" font-size="9.5" fill="#4c1d95">OAuth2/OIDC token, incl. group claims → used as the department filter above</text>
+
+  <!-- Legend -->
+  <line x1="20" y1="510" x2="55" y2="510" stroke="#334155" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="62" y="514" font-size="10" fill="#475569">synchronous call</text>
+
+  <line x1="190" y1="510" x2="225" y2="510" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrowDashed)"/>
+  <text x="232" y="514" font-size="10" fill="#475569">secrets / telemetry (cross-cutting)</text>
+
+  <line x1="470" y1="510" x2="505" y2="510" stroke="#334155" stroke-width="1.4" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="512" y="514" font-size="10" fill="#475569">request / response pair</text>
+
+  <text x="20" y="538" font-size="11" fill="#334155">Ingestion runs offline and populates shared Azure OpenAI + Azure AI Search. Queries run online through an authenticated orchestrator that enforces</text>
+  <text x="20" y="552" font-size="11" fill="#334155">department access as a server-side search filter driven by the caller's Entra ID groups — never as a post-hoc check on the generated answer.</text>
+</svg>

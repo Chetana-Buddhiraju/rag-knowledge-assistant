@@ -1,0 +1,123 @@
+{
+  "Finance/ExpensePolicy.pdf": {
+    "doc_id": "expense-policy",
+    "doc_family": "expense-policy",
+    "title": "Business Expense & Reimbursement Policy",
+    "department": "Finance",
+    "doc_type": "policy",
+    "effective_date": "2026-02-01",
+    "effective_end": null,
+    "version": "5.1",
+    "supersedes": null
+  },
+  "Finance/TravelPolicy.docx": {
+    "doc_id": "travel-policy",
+    "doc_family": "travel-policy",
+    "title": "Business Travel Policy",
+    "department": "Finance",
+    "doc_type": "policy",
+    "effective_date": "2026-01-01",
+    "effective_end": null,
+    "version": "3.2",
+    "supersedes": null
+  },
+  "HR/Benefits.pdf": {
+    "doc_id": "benefits-guide",
+    "doc_family": "benefits-guide",
+    "title": "Employee Benefits Guide",
+    "department": "HR",
+    "doc_type": "guide",
+    "effective_date": "2026-01-01",
+    "effective_end": "2026-12-31",
+    "version": "3.0",
+    "supersedes": null
+  },
+  "HR/LeavePolicy.pdf": {
+    "doc_id": "leave-policy",
+    "doc_family": "leave-policy",
+    "title": "Leave & Time Off Policy",
+    "department": "HR",
+    "doc_type": "policy",
+    "effective_date": "2026-01-01",
+    "effective_end": null,
+    "version": "4.2",
+    "supersedes": null
+  },
+  "IT/PasswordPolicy.docx": {
+    "doc_id": "password-policy",
+    "doc_family": "password-policy",
+    "title": "Password & Authentication Policy",
+    "department": "IT",
+    "doc_type": "policy",
+    "effective_date": "2026-03-01",
+    "effective_end": null,
+    "version": "4.0",
+    "supersedes": null
+  },
+  "IT/VPNGuide.pdf": {
+    "doc_id": "vpn-guide",
+    "doc_family": "vpn-guide",
+    "title": "NorthLink VPN — Setup & Usage Guide",
+    "department": "IT",
+    "doc_type": "guide",
+    "effective_date": "2026-03-01",
+    "effective_end": null,
+    "version": "2.3",
+    "supersedes": null
+  },
+  "Legal/NDA.docx": {
+    "doc_id": "nda-template",
+    "doc_family": "nda-template",
+    "title": "Mutual Non-Disclosure Agreement (Template)",
+    "department": "Legal",
+    "doc_type": "template",
+    "effective_date": null,
+    "effective_end": null,
+    "version": "3.1",
+    "supersedes": null
+  },
+  "Legal/VendorContract.pdf": {
+    "doc_id": "vendor-agreement-template",
+    "doc_family": "vendor-agreement-template",
+    "title": "Vendor Service Agreement (Template)",
+    "department": "Legal",
+    "doc_type": "template",
+    "effective_date": null,
+    "effective_end": null,
+    "version": "6.0",
+    "supersedes": null
+  },
+  "Sales/Discounts.xlsx": {
+    "doc_id": "discount-schedule",
+    "doc_family": "discount-schedule",
+    "title": "OrbitSuite Discount Schedule",
+    "department": "Sales",
+    "doc_type": "reference",
+    "effective_date": "2026-01-01",
+    "effective_end": null,
+    "version": "2.0",
+    "supersedes": null
+  },
+  "Sales/Pricing2025.pdf": {
+    "doc_id": "orbitsuite-pricing-2025",
+    "doc_family": "orbitsuite-pricing",
+    "title": "OrbitSuite Pricing — 2025 Rate Card",
+    "department": "Sales",
+    "doc_type": "reference",
+    "effective_date": "2025-01-01",
+    "effective_end": "2025-12-31",
+    "version": "1.4",
+    "supersedes": null
+  },
+  "Sales/Pricing2026.pdf": {
+    "doc_id": "orbitsuite-pricing-2026",
+    "doc_family": "orbitsuite-pricing",
+    "title": "OrbitSuite Pricing — 2026 Rate Card",
+    "department": "Sales",
+    "doc_type": "reference",
+    "effective_date": "2026-01-01",
+    "effective_end": null,
+    "version": "1.0",
+    "supersedes": "orbitsuite-pricing-2025"
+  }
+}

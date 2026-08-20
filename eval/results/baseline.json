@@ -1,0 +1,662 @@
+{
+  "profile": "baseline",
+  "backend": "local",
+  "cases": [
+    {
+      "id": "q01",
+      "category": "straightforward",
+      "turns": [
+        {
+          "query": "How many business days after approval is an expense report reimbursed?",
+          "rewritten_query": "How many business days after approval is an expense report reimbursed?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.3333333333333333,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 1.0,
+          "groundedness": 0.3,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.5707999953301623,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] ry summons to their manager and HR. \u007f \u007f \u007f \u007f \u007f \u007f \u007f \u007f \u007f \u007f PTO requests of 3 days or fewer should be submitted through "
+        }
+      ]
+    },
+    {
+      "id": "q02",
+      "category": "straightforward",
+      "turns": [
+        {
+          "query": "How many paid sick days do employees get per calendar year?",
+          "rewritten_query": "How many paid sick days do employees get per calendar year?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.6666666666666666,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 1.0,
+          "groundedness": 0.5,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.35110001044813544,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] 0 days 5 days 27.5 days 6 \u2013 10 years 23 days 10 days 30 days 11+ years 25 days 10 days 32.5 days Employees receive 1"
+        }
+      ]
+    },
+    {
+      "id": "q03",
+      "category": "straightforward",
+      "turns": [
+        {
+          "query": "What is the Company's 401(k) matching formula?",
+          "rewritten_query": "What is the Company's 401(k) matching formula?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.3333333333333333,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 0.5,
+          "groundedness": 0.273,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.2852000034181401,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] denied at the Company's discretion. An itemized receipt is required for any single expense of $25 or more. Credit ca"
+        }
+      ]
+    },
+    {
+      "id": "q04",
+      "category": "straightforward",
+      "turns": [
+        {
+          "query": "What is the minimum required password length?",
+          "rewritten_query": "What is the minimum required password length?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 1.0,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 0.0,
+          "groundedness": 0.4,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.25610000011511147,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] r to reduce the risk of unauthorized account access. All Company account passwords must meet the following minimum r"
+        }
+      ]
+    },
+    {
+      "id": "q05",
+      "category": "straightforward",
+      "turns": [
+        {
+          "query": "What should I do if I approved an Okta MFA push notification I did not initiate?",
+          "rewritten_query": "What should I do if I approved an Okta MFA push notification I did not initiate?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.3333333333333333,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 1.0,
+          "groundedness": 0.375,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.5903999990550801,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] l of unrecognized push notifications. If you suspect your password or account has been compromised, or you approved "
+        }
+      ]
+    },
+    {
+      "id": "q06",
+      "category": "straightforward",
+      "turns": [
+        {
+          "query": "How long do confidentiality obligations survive after the mutual NDA's term ends?",
+          "rewritten_query": "How long do confidentiality obligations survive after the mutual NDA's term ends?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.6666666666666666,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 0.5,
+          "groundedness": 0.6,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.5461999971885234,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] ate. Each Party's confidentiality obligations survive for three (3) years following disclosure of the relevant Confi"
+        }
+      ]
+    },
+    {
+      "id": "q07",
+      "category": "straightforward",
+      "turns": [
+        {
+          "query": "What is the minimum seat count required for the OrbitSuite Enterprise tier?",
+          "rewritten_query": "What is the minimum seat count required for the OrbitSuite Enterprise tier?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.3333333333333333,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 0.0,
+          "groundedness": 1.0,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.38240000139921904,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] Northwind Traders \u2014 OrbitSuite Discount Schedule Sales Operations  |  Effective: January 1, 2026  |  Version 2.0  | "
+        }
+      ]
+    },
+    {
+      "id": "q08",
+      "category": "straightforward",
+      "turns": [
+        {
+          "query": "How many days in advance should international business travel be booked?",
+          "rewritten_query": "How many days in advance should international business travel be booked?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.6666666666666666,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 1.0,
+          "groundedness": 0.333,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.35629999183584005,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] ses, and reimbursement for business travel. All business travel must be booked through Concur Travel, the Company's "
+        }
+      ]
+    },
+    {
+      "id": "q09",
+      "category": "multi_document",
+      "turns": [
+        {
+          "query": "What is the itemized receipt requirement threshold, and does it apply the same way for travel expenses as for regular expenses?",
+          "rewritten_query": "What is the itemized receipt requirement threshold, and does it apply the same way for travel expenses as for regular expenses?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 1.0,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 1.0,
+          "groundedness": 0.3,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.5297000025166199,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] denied at the Company's discretion. An itemized receipt is required for any single expense of $25 or more. Credit ca"
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "category": "multi_document",
+      "turns": [
+        {
+          "query": "Compare the OrbitSuite Professional and Enterprise tiers on price and API access.",
+          "rewritten_query": "Compare the OrbitSuite Professional and Enterprise tiers on price and API access.",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.3333333333333333,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 0.0,
+          "groundedness": 0.286,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.413799993111752,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] .95% \u007f Advanced Analytics: +$14/seat/month \u007f Premium Integrations Pack: +$9/seat/month \u007f Additional sandbox environm"
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "category": "multi_document",
+      "turns": [
+        {
+          "query": "For a 150-seat annual prepaid deal, how do the volume discount and the term discount combine?",
+          "rewritten_query": "For a 150-seat annual prepaid deal, how do the volume discount and the term discount combine?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 1.0,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 0.3333333333333333,
+          "groundedness": 0.5,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.3749000024981797,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] h renewal. Stacking Example (Volume + Term Discount) Number of Seats | 150 Billing Term | Annual (prepaid) Volume Di"
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "category": "multi_document",
+      "turns": [
+        {
+          "query": "What's the difference between short-term and long-term disability coverage?",
+          "rewritten_query": "What's the difference between short-term and long-term disability coverage?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.3333333333333333,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 1.0,
+          "groundedness": 0.375,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.334399999701418,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] sability: 60% of salary for up to 12 weeks, Company-paid. \u007f Long-term disability: 60% of salary after a 90-day elimi"
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "category": "conflicting_versions",
+      "turns": [
+        {
+          "query": "What is the current price per seat for the OrbitSuite Enterprise tier?",
+          "rewritten_query": "What is the current price per seat for the OrbitSuite Enterprise tier?",
+          "ambiguous_predicted": false,
+          "hit_rate": 0.0,
+          "precision_at_k": 0.0,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 0.0,
+          "groundedness": 0.6,
+          "citation_correct": false,
+          "hallucinated": false,
+          "latency_ms": 0.3437999985180795,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] le use is reimbursed at the current IRS standard mileage rate. Employees may choose actual-cost reimbursement (with "
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "category": "conflicting_versions",
+      "turns": [
+        {
+          "query": "What was the OrbitSuite Enterprise tier's price per seat in the 2025 rate card?",
+          "rewritten_query": "What was the OrbitSuite Enterprise tier's price per seat in the 2025 rate card?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.3333333333333333,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 0.0,
+          "groundedness": 0.429,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.5166000046301633,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] Northwind Traders, Inc. | Sales Operations | Effective: January 1, 2025 \u2013 December 31, 2025 | Version 1.4 This docum"
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "category": "ambiguous",
+      "turns": [
+        {
+          "query": "What is the limit?",
+          "rewritten_query": "What is the limit?",
+          "ambiguous_predicted": false,
+          "hit_rate": null,
+          "precision_at_k": null,
+          "acl_violation": false,
+          "ambiguous_correct": false,
+          "insufficient_correct": true,
+          "keyword_coverage": 1.0,
+          "groundedness": 0.333,
+          "citation_correct": null,
+          "hallucinated": false,
+          "latency_ms": 0.25270000332966447,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] breaching Party is entitled to seek injunctive relief in addition to any other remedies available at law or in equit"
+        }
+      ]
+    },
+    {
+      "id": "q16",
+      "category": "ambiguous",
+      "turns": [
+        {
+          "query": "What is the price?",
+          "rewritten_query": "What is the price?",
+          "ambiguous_predicted": false,
+          "hit_rate": null,
+          "precision_at_k": null,
+          "acl_violation": false,
+          "ambiguous_correct": false,
+          "insufficient_correct": true,
+          "keyword_coverage": 1.0,
+          "groundedness": 0.429,
+          "citation_correct": null,
+          "hallucinated": false,
+          "latency_ms": 0.2327999973203987,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] breaching Party is entitled to seek injunctive relief in addition to any other remedies available at law or in equit"
+        }
+      ]
+    },
+    {
+      "id": "q17",
+      "category": "no_answer",
+      "turns": [
+        {
+          "query": "Does Northwind Traders provide relocation assistance for employees moving to a new city?",
+          "rewritten_query": "Does Northwind Traders provide relocation assistance for employees moving to a new city?",
+          "ambiguous_predicted": false,
+          "hit_rate": null,
+          "precision_at_k": null,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": false,
+          "keyword_coverage": null,
+          "groundedness": null,
+          "citation_correct": null,
+          "hallucinated": true,
+          "latency_ms": 0.3826000029221177,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] Northwind Traders, Inc. | Legal Department | Template Version: 6.0 | For internal / mock use only \u2014 not a binding ag"
+        }
+      ]
+    },
+    {
+      "id": "q18",
+      "category": "no_answer",
+      "turns": [
+        {
+          "query": "What is the process for requesting a new company laptop?",
+          "rewritten_query": "What is the process for requesting a new company laptop?",
+          "ambiguous_predicted": false,
+          "hit_rate": null,
+          "precision_at_k": null,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": false,
+          "keyword_coverage": null,
+          "groundedness": null,
+          "citation_correct": null,
+          "hallucinated": true,
+          "latency_ms": 0.3184999950462952,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] Company's behalf. \u007f Expenses must be reasonable, necessary, and directly related to Company business. \u007f Employees sh"
+        }
+      ]
+    },
+    {
+      "id": "q19",
+      "category": "no_answer",
+      "turns": [
+        {
+          "query": "What is Northwind Traders' policy on reimbursing employees for patent filing costs on their inventions?",
+          "rewritten_query": "What is Northwind Traders' policy on reimbursing employees for patent filing costs on their inventions?",
+          "ambiguous_predicted": false,
+          "hit_rate": null,
+          "precision_at_k": null,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": false,
+          "keyword_coverage": null,
+          "groundedness": null,
+          "citation_correct": null,
+          "hallucinated": true,
+          "latency_ms": 0.42729999404400587,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] Northwind Traders, Inc. | Human Resources | Plan Year: 2026 | Version 3.0 | Policy Owner: Director, Total Rewards No"
+        }
+      ]
+    },
+    {
+      "id": "q20",
+      "category": "no_answer",
+      "turns": [
+        {
+          "query": "Does Northwind Traders offer a lifetime price-lock guarantee on OrbitSuite contracts?",
+          "rewritten_query": "Does Northwind Traders offer a lifetime price-lock guarantee on OrbitSuite contracts?",
+          "ambiguous_predicted": false,
+          "hit_rate": null,
+          "precision_at_k": null,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": false,
+          "keyword_coverage": null,
+          "groundedness": null,
+          "citation_correct": null,
+          "hallucinated": true,
+          "latency_ms": 0.37149999116081744,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] Northwind Traders, Inc. | Sales Operations | Effective: January 1, 2025 \u2013 December 31, 2025 | Version 1.4 This docum"
+        }
+      ]
+    },
+    {
+      "id": "q21",
+      "category": "access_control",
+      "turns": [
+        {
+          "query": "What is the sick leave policy?",
+          "rewritten_query": "What is the sick leave policy?",
+          "ambiguous_predicted": false,
+          "hit_rate": null,
+          "precision_at_k": null,
+          "acl_violation": true,
+          "ambiguous_correct": null,
+          "insufficient_correct": false,
+          "keyword_coverage": null,
+          "groundedness": null,
+          "citation_correct": null,
+          "hallucinated": true,
+          "latency_ms": 0.26089999300893396,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] 0 days 5 days 27.5 days 6 \u2013 10 years 23 days 10 days 30 days 11+ years 25 days 10 days 32.5 days Employees receive 1"
+        }
+      ]
+    },
+    {
+      "id": "q22",
+      "category": "access_control",
+      "turns": [
+        {
+          "query": "What is the sick leave policy?",
+          "rewritten_query": "What is the sick leave policy?",
+          "ambiguous_predicted": false,
+          "hit_rate": null,
+          "precision_at_k": null,
+          "acl_violation": true,
+          "ambiguous_correct": null,
+          "insufficient_correct": false,
+          "keyword_coverage": null,
+          "groundedness": null,
+          "citation_correct": null,
+          "hallucinated": true,
+          "latency_ms": 0.2535999956307933,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] 0 days 5 days 27.5 days 6 \u2013 10 years 23 days 10 days 30 days 11+ years 25 days 10 days 32.5 days Employees receive 1"
+        }
+      ]
+    },
+    {
+      "id": "conv01",
+      "category": "follow_up",
+      "turns": [
+        {
+          "query": "What is the client meal expense limit?",
+          "rewritten_query": "What is the client meal expense limit?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.6666666666666666,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 0.0,
+          "groundedness": 0.3,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.26369999977760017,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] denied at the Company's discretion. An itemized receipt is required for any single expense of $25 or more. Credit ca"
+        },
+        {
+          "query": "What about team meals?",
+          "rewritten_query": "What about team meals?",
+          "ambiguous_predicted": false,
+          "hit_rate": 0.0,
+          "precision_at_k": 0.0,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 1.0,
+          "groundedness": 0.333,
+          "citation_correct": false,
+          "hallucinated": false,
+          "latency_ms": 0.23970000620465726,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] 24 seats | 5 | 0 | 65 25\u201349 seats | 25 | 0.05 | 61.75 50\u201399 seats | 50 | 0.1 | 58.5 100\u2013249 seats | 100 | 0.15 | 55."
+        },
+        {
+          "query": "Who has to approve it if it's above that?",
+          "rewritten_query": "Who has to approve it if it's above that?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.3333333333333333,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 0.0,
+          "groundedness": 0.6,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.2896000078180805,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] than $30/person, unless pre-approved for a client event. Up to $500 $500 \u2013 $2,500 $2,500 \u2013 $10,000 Above $10,000 VP "
+        }
+      ]
+    },
+    {
+      "id": "conv02",
+      "category": "follow_up",
+      "turns": [
+        {
+          "query": "What is the OrbitSuite Professional tier's API call limit?",
+          "rewritten_query": "What is the OrbitSuite Professional tier's API call limit?",
+          "ambiguous_predicted": false,
+          "hit_rate": 0.0,
+          "precision_at_k": 0.0,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 0.0,
+          "groundedness": 0.375,
+          "citation_correct": false,
+          "hallucinated": false,
+          "latency_ms": 0.30980000155977905,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] a review under the Attendance Guidelines. Unpaid leave may be granted at the Company's discretion once an employee h"
+        },
+        {
+          "query": "And Enterprise?",
+          "rewritten_query": "And Enterprise?",
+          "ambiguous_predicted": false,
+          "hit_rate": 1.0,
+          "precision_at_k": 0.6666666666666666,
+          "acl_violation": false,
+          "ambiguous_correct": null,
+          "insufficient_correct": true,
+          "keyword_coverage": 0.0,
+          "groundedness": 0.286,
+          "citation_correct": true,
+          "hallucinated": false,
+          "latency_ms": 0.21719999494962394,
+          "token_total": 0,
+          "used_llm": false,
+          "answer_preview": "(Extractive mode \u2014 no LLM configured, showing top matching excerpts verbatim)\n\n\n[1] .95% \u007f Advanced Analytics: +$14/seat/month \u007f Premium Integrations Pack: +$9/seat/month \u007f Additional sandbox environm"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "n_cases": 24,
+    "n_turns": 27,
+    "retrieval": {
+      "hit_rate": 0.8421,
+      "precision_at_k": 0.4737
+    },
+    "generation": {
+      "answer_keyword_coverage": 0.4921,
+      "groundedness": 0.4251,
+      "citation_correctness": 0.8421,
+      "hallucination_rate": 0.2222,
+      "ambiguous_detection_accuracy": 0.0,
+      "insufficient_evidence_accuracy": 0.7778
+    },
+    "access_control": {
+      "acl_violation_rate": 0.0741
+    },
+    "system": {
+      "avg_latency_ms": 0.3582,
+      "p95_latency_ms": 0.55,
+      "total_tokens": 0,
+      "estimated_cost_usd": null,
+      "llm_used": false
+    }
+  }
+}
