@@ -160,12 +160,3 @@ lexical reranker for offline dev) · metadata filtering · confidence scoring ·
   a document management system) before this would work past the assignment's fixed 11 documents.
 - Add a cross-encoder or LLM-based reranker for the local backend (currently lexical-overlap only)
   so offline eval numbers are closer to what Azure's semantic ranker would produce.
-
-## Submission mapping
-
-- **GitHub repo**: this repository.
-- **Architecture diagram**: `docs/architecture-diagram.svg`.
-- **Evaluation results**: `eval/results/{baseline,improved}.json`, `eval/results/comparison.md`.
-- **Demo video**: see `docs/ARCHITECTURE.md` for the talking points (architecture, Azure service
-  choices, live chatbot demo, 1-2 failure scenarios + diagnosis + fix, before/after eval, what's
-  next for production).
