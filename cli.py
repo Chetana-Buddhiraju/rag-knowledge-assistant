@@ -21,7 +21,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--role", choices=sorted(ROLE_DEPARTMENT_ACCESS.keys()), default="admin")
     parser.add_argument("--profile", choices=list(PROFILES.keys()), default="improved")
-    parser.add_argument("--backend", choices=["local", "azure"], default="local")
+    parser.add_argument("--backend", choices=["local", "github", "azure"], default="local")
     args = parser.parse_args()
 
     settings = Settings()

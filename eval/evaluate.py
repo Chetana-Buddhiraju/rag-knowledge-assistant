@@ -217,7 +217,7 @@ def _summarize(per_case_results: list[dict]) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--profile", choices=list(PROFILES.keys()), required=True)
-    parser.add_argument("--backend", choices=["local", "azure"], default=None)
+    parser.add_argument("--backend", choices=["local", "github", "azure"], default=None)
     args = parser.parse_args()
 
     result = run_eval(args.profile, args.backend)

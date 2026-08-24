@@ -14,12 +14,18 @@ It ships as **two parallel pipeline profiles over the same code path**:
 Running the evaluation harness against both profiles is what produces the "before vs after"
 comparison the assignment asks for — see [`eval/results/comparison.md`](eval/results/comparison.md).
 
-It also ships with **two backends**:
+It also ships with **three backends**:
 
 - **`local`** (default) — zero cloud dependencies: a deterministic hashed embedding, BM25 +
   cosine hybrid search fused with Reciprocal Rank Fusion, and an extractive (non-LLM) answer
   mode. This exists so the whole pipeline — ingestion, ACL, versioning, ambiguity detection, the
   eval harness — is runnable and testable with `pip install` and nothing else.
+- **`github`** — free, no credit card: real chat + embeddings via [GitHub
+  Models](https://github.com/marketplace/models) (OpenAI-API-compatible, authenticated with a
+  GitHub personal access token), paired with the same local hybrid search `local` uses (GitHub
+  Models doesn't include a managed search service). Useful when Azure access isn't available yet —
+  it exercises the real generation/citation/guardrail code path, just without Azure AI Search's
+  managed semantic reranker.
 - **`azure`** — the real, documented production path: Azure OpenAI (chat + embeddings) + Azure
   AI Search (hybrid + semantic ranker). See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for
   the full production architecture and the written answers to the assignment's Step 2 / Step 5
@@ -42,8 +48,12 @@ python cli.py --role sales    # terminal chat
 uvicorn api:app --reload      # POST /chat {"query": "...", "role": "finance"}
 ```
 
-To run against real Azure services: copy `.env.example` to `.env`, fill in your Azure OpenAI and
-Azure AI Search credentials, then re-run ingestion and the app with `BACKEND=azure`.
+To use the free GitHub Models backend: copy `.env.example` to `.env`, add a GitHub personal
+access token as `GITHUB_MODELS_TOKEN`, then `python scripts/ingest.py --profile improved --backend
+github` and run the app with `BACKEND=github`.
+
+To run against real Azure services: same `.env` file, fill in your Azure OpenAI and Azure AI
+Search credentials, then re-run ingestion and the app with `BACKEND=azure`.
 
 ## Repository layout
 

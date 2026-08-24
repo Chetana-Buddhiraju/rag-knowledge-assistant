@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from ..config import AzureConfig
+from ..config import AzureConfig, GitHubModelsConfig
 
 
 @dataclass
@@ -69,6 +69,43 @@ class AzureOpenAIChatClient(LLMClient):
         return self._usage
 
 
+class GitHubModelsChatClient(LLMClient):
+    """Free-tier chat client via GitHub Models (OpenAI-API-compatible endpoint,
+    authenticated with a GitHub personal access token). No Azure subscription
+    or credit card needed — rate-limited, so fine for a demo/eval run, not for
+    production traffic. See GitHubModelsConfig for how to fix the model id/base
+    URL if GitHub has changed them since this was written."""
+
+    def __init__(self, cfg: GitHubModelsConfig):
+        from openai import OpenAI
+
+        if not cfg.is_configured():
+            raise RuntimeError("GitHub Models is not configured.")
+        self.client = OpenAI(base_url=cfg.base_url, api_key=cfg.token)
+        self.model = cfg.chat_model
+        self._usage = TokenUsage()
+
+    def is_available(self) -> bool:
+        return True
+
+    def complete(self, system: str, user: str, max_tokens: int = 500) -> str:
+        resp = self.client.chat.completions.create(
+            model=self.model,
+            messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
+            max_tokens=max_tokens,
+            temperature=0.1,
+        )
+        usage = resp.usage
+        self._usage = TokenUsage(
+            prompt_tokens=usage.prompt_tokens if usage else 0,
+            completion_tokens=usage.completion_tokens if usage else 0,
+        )
+        return resp.choices[0].message.content or ""
+
+    def last_usage(self) -> TokenUsage:
+        return self._usage
+
+
 class ExtractiveFallbackClient(LLMClient):
     """No LLM configured: cannot synthesize prose, so it does not try to. It
     is used by generation/prompt.py only to signal "no LLM" — the pipeline's
@@ -86,6 +123,8 @@ class ExtractiveFallbackClient(LLMClient):
 
 
 def get_llm_client(settings) -> LLMClient:
-    if settings.use_azure() and settings.azure.is_openai_configured():
+    if settings.backend == "azure" and settings.azure.is_openai_configured():
         return AzureOpenAIChatClient(settings.azure)
+    if settings.backend == "github" and settings.github.is_configured():
+        return GitHubModelsChatClient(settings.github)
     return ExtractiveFallbackClient()

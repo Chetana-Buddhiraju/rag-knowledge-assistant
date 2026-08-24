@@ -39,7 +39,7 @@ with st.sidebar:
     role = st.selectbox("Signed in as (role)", options=sorted(ROLE_DEPARTMENT_ACCESS.keys()), index=sorted(ROLE_DEPARTMENT_ACCESS.keys()).index("admin"))
     st.caption(f"Access: {', '.join(get_allowed_departments(role)) or '(no departments — none)'}")
 
-    backend = st.selectbox("Backend", options=["local", "azure"], index=0, help="local = offline dev fallback (hashed embeddings, BM25+cosine hybrid). azure = Azure OpenAI + Azure AI Search.")
+    backend = st.selectbox("Backend", options=["local", "github", "azure"], index=0, help="local = fully offline (hashed embeddings, extractive answers). github = free real LLM+embeddings via GitHub Models, local hybrid search. azure = Azure OpenAI + Azure AI Search (production).")
     profile_name = st.selectbox("Pipeline profile", options=list(PROFILES.keys()), index=list(PROFILES.keys()).index("improved"), help="baseline reproduces the assignment's naive-RAG failure modes; improved applies all fixes.")
 
     if st.button("Clear conversation"):

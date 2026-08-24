@@ -1,7 +1,12 @@
 """Central configuration, loaded from environment variables (.env).
 
 Two independent axes of configuration:
-  1. Backend selection (BACKEND=local|azure) — which vector store / embeddings / LLM to use.
+  1. Backend selection (BACKEND=local|github|azure) — which vector store / embeddings / LLM
+     to use. "azure" is the documented production path (Azure OpenAI + Azure AI Search).
+     "github" is a free, no-credit-card fallback (GitHub Models for real chat + embeddings,
+     paired with the same local BM25+cosine hybrid search "local" uses, since GitHub Models
+     doesn't include a managed search service). "local" is fully offline (no network calls
+     at all) for zero-dependency development and the evaluation harness.
   2. Pipeline profile (baseline|improved) — which retrieval/generation behavior to use.
      The profile is what Step 3/Step 4 of the assignment is about: the same backends,
      two different pipeline configurations, evaluated against each other.
@@ -52,6 +57,28 @@ class AzureConfig:
 
 
 @dataclass
+class GitHubModelsConfig:
+    """GitHub Models: free, rate-limited access to hosted models (GPT-4o family,
+    embedding models, etc.) via an OpenAI-API-compatible endpoint, authenticated
+    with a GitHub personal access token — no Azure subscription or card needed.
+
+    Model IDs and the exact base URL occasionally shift as GitHub evolves this
+    product; if the defaults below 404, open the model's page at
+    https://github.com/marketplace/models, click "Use this model", and copy the
+    exact base_url/model id shown there into your .env.
+    """
+
+    token: str = field(default_factory=lambda: os.getenv("GITHUB_MODELS_TOKEN") or os.getenv("GITHUB_TOKEN", ""))
+    base_url: str = field(default_factory=lambda: os.getenv("GITHUB_MODELS_BASE_URL", "https://models.github.ai/inference"))
+    chat_model: str = field(default_factory=lambda: os.getenv("GITHUB_MODELS_CHAT_MODEL", "openai/gpt-4o-mini"))
+    embedding_model: str = field(default_factory=lambda: os.getenv("GITHUB_MODELS_EMBEDDING_MODEL", "openai/text-embedding-3-small"))
+    embedding_dim: int = field(default_factory=lambda: int(os.getenv("GITHUB_MODELS_EMBEDDING_DIM", "1536")))
+
+    def is_configured(self) -> bool:
+        return bool(self.token)
+
+
+@dataclass
 class PipelineProfile:
     """A named bundle of retrieval/generation knobs. `baseline` reproduces the naive
     RAG failure modes from the assignment; `improved` is the fixed version."""
@@ -98,9 +125,10 @@ PROFILES = {"baseline": BASELINE_PROFILE, "improved": IMPROVED_PROFILE}
 
 @dataclass
 class Settings:
-    backend: str = field(default_factory=lambda: os.getenv("BACKEND", "local").lower())  # "local" | "azure"
+    backend: str = field(default_factory=lambda: os.getenv("BACKEND", "local").lower())  # "local" | "github" | "azure"
     profile_name: str = field(default_factory=lambda: os.getenv("PROFILE", "improved").lower())
     azure: AzureConfig = field(default_factory=AzureConfig)
+    github: GitHubModelsConfig = field(default_factory=GitHubModelsConfig)
     debug: bool = field(default_factory=lambda: _bool("DEBUG", False))
 
     @property
@@ -108,6 +136,10 @@ class Settings:
         return PROFILES[self.profile_name]
 
     def use_azure(self) -> bool:
+        """True only for the full production stack (Azure OpenAI + Azure AI Search).
+        Both "local" and "github" backends use the local BM25+cosine hybrid vector
+        store and the local lexical reranker/confidence heuristic — they only differ
+        in whether generation/embeddings hit a real model or a local fallback."""
         return self.backend == "azure"
 
 

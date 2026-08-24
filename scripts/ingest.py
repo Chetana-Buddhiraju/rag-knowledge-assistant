@@ -3,6 +3,7 @@
 Usage:
     python scripts/ingest.py --profile improved   # BACKEND from .env / env var
     python scripts/ingest.py --profile baseline
+    python scripts/ingest.py --profile improved --backend github   # free, no card
     BACKEND=azure python scripts/ingest.py --profile improved
 """
 from __future__ import annotations
@@ -26,7 +27,7 @@ from src.vectorstore.factory import get_vector_store  # noqa: E402
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--profile", choices=list(PROFILES.keys()), default="improved")
-    parser.add_argument("--backend", choices=["local", "azure"], default=None)
+    parser.add_argument("--backend", choices=["local", "github", "azure"], default=None)
     args = parser.parse_args()
 
     settings = Settings()
